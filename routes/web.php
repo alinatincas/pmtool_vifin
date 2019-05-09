@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+
+Route::get('/', 'PagesController@index');
+Route::get('/timesheet', 'PagesController@timesheet');
