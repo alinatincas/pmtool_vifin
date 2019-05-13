@@ -15,6 +15,7 @@ class PagesController extends Controller
     {
         $title = 'TIMESHEET';
         //return view('pages.timesheet');
-        return view('pages.timesheet', compact('title'));
+        //return view('pages.timesheet', compact('title'));
+        return view('pages.timesheet')->with('title', $title);
     }
 }
