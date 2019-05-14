@@ -14,13 +14,12 @@ class CreateWorkPakagesTable extends Migration
     public function up()
     {
         Schema::create('work_pakages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->datetime('start_date');
-            $table->datetime('end_date');
+            $table->bigIncrements('wp_id');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->integer('total_work');
-            $table->char('work_type', 100);
-            $table->decimal('Euro_pay');
-            $table->timestamps();
+            $table->string('work_type', 100);
+            $table->decimal('Euro_pay', 10, 0);
         });
     }
 
