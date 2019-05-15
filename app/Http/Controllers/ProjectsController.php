@@ -36,7 +36,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -47,7 +47,18 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'project_name' => 'required',
+            'description' => 'required'
+        ]);
+
+        //Create Project
+        $project = new Project;
+        $project->project_name = $request->input('project_name');
+        $project->decription = $request->input('decription');
+        $project->save();
+
+        return redirect('/projects'->with('success', 'Project Created'));
     }
 
     /**

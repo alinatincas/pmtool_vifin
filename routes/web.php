@@ -23,4 +23,4 @@ Route::resource('workpackages', 'WorkPackagesController');
 Route::resource('projects', 'ProjectsController');
 
 Route::resource('/', 'ProjectsController');
-Route::get('project/{{project_id}}', 'ProjectsController@show');
+//Route::get('project/{{project_id}}', 'ProjectsController@show');
