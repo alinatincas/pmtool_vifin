@@ -24,12 +24,12 @@ class CreateProjectsTable extends Migration
             $table->string('org_name', 100);
             $table->string('staff_member', 100);
             $table->string('staff_category', 100);
-            $table->integer('image_url');
+            /* $table->integer('image_url');
             $table->foreign('image_url')->references('img_id')->on('images');
             $table->integer('company_logo');
             $table->foreign('company_logo')->references('img_id')->on('images');
             $table->integer('sponsor_img');
-            $table->foreign('sponsor_img')->references('img_id')->on('images');
+            $table->foreign('sponsor_img')->references('img_id')->on('images'); */
         });
     }
 

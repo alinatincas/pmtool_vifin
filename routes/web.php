@@ -19,3 +19,8 @@ Route::get('/', 'PagesController@index');
 Route::get('/timesheet', 'PagesController@timesheet');
 
 Route::resource('workpackages', 'WorkPackagesController');
+
+Route::resource('projects', 'ProjectsController');
+
+Route::resource('/', 'ProjectsController');
+Route::get('project/{{project_id}}', 'ProjectsController@show');
