@@ -1,6 +1,6 @@
 @extends('layouts.myapp')
 
 @section('content')
-    <h1>{{$project->description}}</h1>
+    <h1>{{$project[0]->project_name}}</h1>
     
 @endsection
