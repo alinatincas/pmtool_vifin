@@ -73,11 +73,11 @@ class ProjectsController extends Controller
      */
     public function show($project_id)
     {
-        echo $project_id;
-        $project = Project::where('project_id', $project_id)->get();
+
         //$all_projects = Project::all();
         //echo $project;
-
+        echo $project_id;
+        $project = Project::where('project_id', $project_id)->get();
         return view('projects.show')->with('project', $project);
     }
 
@@ -89,7 +89,9 @@ class ProjectsController extends Controller
      */
     public function edit($project_id)
     {
-        //
+        echo $project_id;
+        $project = Project::where('project_id', $project_id)->get();
+        return view('projects.edit')->with('project', $project);
     }
 
     /**
@@ -101,7 +103,18 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $project_id)
     {
-        //
+        $this->validate($request, [
+            'project_name' => 'required',
+            'description' => 'required'
+        ]);
+
+        //Create Project
+        $project = Project::find($project_id);
+        $project->project_name = $request->input('project_name');
+        $project->decription = $request->input('decription');
+        $project->save();
+
+        return redirect('/projects')->with('success', 'Project Updated');
     }
 
     /**
@@ -112,6 +125,9 @@ class ProjectsController extends Controller
      */
     public function destroy($project_id)
     {
-        //
+        $project = Project::find($project_id);
+        $project->delete();
+
+        return redirect('/projects')->with('success', 'Project Removed');
     }
 }
