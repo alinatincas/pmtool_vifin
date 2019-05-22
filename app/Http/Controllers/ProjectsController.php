@@ -17,9 +17,13 @@ class ProjectsController extends Controller
     {
         //$projects = Project::orderBy('project_name', 'desc')->get();
 
-        $projects = Project::orderBy('project_name', 'desc')->paginate(1);
+        //$projects = Project::orderBy('project_name', 'desc')->paginate(10);
+        //$projects = Project::orderBy('created_at', 'desc')->paginate(10);
 
         //$projects = Project::orderBy('project_name', 'desc')->take(1)->get();
+
+        $projects = Project::paginate(10);
+
         //limit with 1 post per page
 
         //$projects =  Project::all();
@@ -58,7 +62,7 @@ class ProjectsController extends Controller
         $project->decription = $request->input('decription');
         $project->save();
 
-        return redirect('/projects'->with('success', 'Project Created'));
+        return redirect('/projects')->with('success', 'Project Created');
     }
 
     /**
@@ -70,7 +74,7 @@ class ProjectsController extends Controller
     public function show($project_id)
     {
         echo $project_id;
-        $project = Project::where('project_id',$project_id)->get();
+        $project = Project::where('project_id', $project_id)->get();
         //$all_projects = Project::all();
         //echo $project;
 

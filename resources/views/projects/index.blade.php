@@ -8,7 +8,9 @@
                 <h3><a href="/projects/{{$project->project_id}}">{{$project->project_name}}</a></h3>
             </div> <br>
         @endforeach  
-        {{$projects->links()}}     
+{{--          this creates the pagination links for projects
+  --}}        {{$projects->links()}}  
+
     @else 
         <p>No projects found</p>
     @endif

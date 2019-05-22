@@ -22,8 +22,16 @@ Route::resource('workpackages', 'WorkPackagesController');
 
 Route::resource('projects', 'ProjectsController');
 
+
 //Route::resource('/', 'ProjectsController');
 Route::get('projects/{project_id}', 'ProjectsController@show');
 //Route::get('project/{project_id}', function ($id) {
 //    echo "test " . $id;
 //});
+Route::get('projects/create', 'ProjectsController@create');
+Route::get('projects', 'ProjectsController@index');
+Route::post('projects', 'ProjectsController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
