@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Project;
 use DB;
 
 class ProjectsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     * Only those who login can see this page
+     * @return void
+     */
+    /* public function __construct()
+    {
+        $this->middleware('auth');
+    } */
+
     /**
      * Display a listing of the resource.
      *
@@ -53,13 +64,35 @@ class ProjectsController extends Controller
     {
         $this->validate($request, [
             'project_name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'company_logo' => 'image|nullable|max:1999'
         ]);
+
+        //Handle file upload
+        if ($request->hasFile('company_logo')) {
+            //Get file name with the extension
+            $filenameWithExt = $request->file('company_logo')->getClientOriginalName();
+
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //Get just extension
+            $extension = $request->file('company_logo'->getClientOriginalExtension());
+
+            //File name to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+
+            //upload image
+            $path = $request->file('company_logo')->storeAs('public/company_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
 
         //Create Project
         $project = new Project;
         $project->project_name = $request->input('project_name');
         $project->decription = $request->input('decription');
+        $project->company_logo = $fileNameToStore;
         $project->save();
 
         return redirect('/projects')->with('success', 'Project Created');
@@ -108,10 +141,31 @@ class ProjectsController extends Controller
             'description' => 'required'
         ]);
 
+        //Handle file upload
+        if ($request->hasFile('company_logo')) {
+            //Get file name with the extension
+            $filenameWithExt = $request->file('company_logo')->getClientOriginalName();
+
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //Get just extension
+            $extension = $request->file('company_logo'->getClientOriginalExtension());
+
+            //File name to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+
+            //upload image
+            $path = $request->file('company_logo')->storeAs('public/company_images', $fileNameToStore);
+        }
+
         //Create Project
         $project = Project::find($project_id);
         $project->project_name = $request->input('project_name');
         $project->decription = $request->input('decription');
+        if ($request->hasFile('company_logo')) {
+            $project->company_logo = $fileNameToStore;
+        }
         $project->save();
 
         return redirect('/projects')->with('success', 'Project Updated');
@@ -126,6 +180,12 @@ class ProjectsController extends Controller
     public function destroy($project_id)
     {
         $project = Project::find($project_id);
+
+        if ($project->company_logo != 'noimage.jpg') {
+            //delete image
+            Storage::delete('public/company_logos/' . $project->company_logo);
+        }
+
         $project->delete();
 
         return redirect('/projects')->with('success', 'Project Removed');

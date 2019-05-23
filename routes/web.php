@@ -34,4 +34,4 @@ Route::post('projects', 'ProjectsController@store');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DasboardController@index');

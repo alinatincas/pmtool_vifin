@@ -13,7 +13,7 @@
                 &nbsp;
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="/home">Home</a></li><br>
+                <li><a href="/">Home</a></li><br>
                 <li><a href="/projects">Projects</a></li><br>
                 <li><a href="/timesheet">Timesheet</a></li><br>
             </ul>
