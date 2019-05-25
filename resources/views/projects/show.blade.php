@@ -15,7 +15,7 @@
         <a href="/projects" class="btn btn-danger">Go Back</a>
     </div><br>
 
-    {{--  @if (!Auth::quest())   --}} {{--  quest can't see these buttons  --}}
+     @if (!Auth::quest())   {{--  quest can't see these buttons  --}}
         <div>
             <a href="/projects/{{$project[0]}}/edit" class="btn btn-primary">Edit</a>
         </div>
@@ -26,7 +26,7 @@
             
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}   
         {!! Form::close() !!}    
-   {{--   @endif  --}}
+     @endif 
     
     
 @endsection

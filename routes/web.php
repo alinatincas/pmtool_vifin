@@ -35,3 +35,7 @@ Route::post('projects', 'ProjectsController@store');
 Auth::routes();
 
 Route::get('/dashboard', 'DasboardController@index');
+
+Route::resources([
+    'employees' => 'EmployeeController',
+]);
