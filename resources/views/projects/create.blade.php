@@ -11,7 +11,7 @@
 
         <div class="form-group">
             {{Form::label('description', 'Description')}}
-            {{Form::textarea('description', '', [{{--  'id' => 'article-ckeditor',  --}} 'class' => 'form-control', 'placeholder' => 'Description text'])}}
+            {{Form::textarea('description', '', ['id' => 'text_editor', 'class' => 'form-control', 'placeholder' => 'Description text'])}}
         </div>
 
         <div class="form-group">
@@ -21,4 +21,11 @@
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
         
     {!! Form::close() !!}
+{{--      <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>  --}}
+@endsection
+
+@section('script')
+    tinymce.init({selector:'textarea'});
 @endsection

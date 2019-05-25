@@ -9,6 +9,7 @@
 
     <title>{{ config('app.name', 'VIFIN') }}</title>
 
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
     
 
     <!-- Fonts -->
@@ -31,9 +32,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'article-ckeditor' );
+        @yield('script')
     </script>
 </body>
 </html>
