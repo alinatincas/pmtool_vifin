@@ -21,4 +21,6 @@
     @else 
         <p>No projects found</p>
     @endif
+
+    <button><a href="projects/create">Create</a></button>
 @endsection
