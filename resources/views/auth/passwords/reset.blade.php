@@ -1,4 +1,38 @@
-@extends('layouts.app')
+@extends('layouts.login_layout')
+@section('content')
+<div class="content-login">
+    <div class="form-group row mb-2">
+        <div class="col-md-12">
+            <img src="/img/vifin_logo.png" alt="" class="logo-img-login mx-auto d-block img-fluid">
+        </div>
+    </div>    
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+                email
+            </div>
+        </div> 
+    
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+                password
+            </div>
+        </div> 
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+                submit
+            </div>
+        </div> 
+        <div class="form-group row mb-2">
+            <div class="col-md-6 offset-md-4">
+                <div class="form-check">
+                    remember me  forgot password
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 @section('content')
 <div class="container">

@@ -1,3 +1,26 @@
-.logo-img-login{
-    width: 25%;
+@import "variables";
+.content-login {
+    margin-top: 15%;
+}
+.logo-img-login {
+    width: 33%;
+}
+
+.login-form {
+    box-shadow: $box-shadow;
+    border: none;
+    text-align: center;
+    height: 150%;
+}
+.login-submit {
+    background-color: $vifin-aqua !important;
+    width: 100%;
+    height: 130%;
+}
+.login-forgot-link {
+    color: $vifin-aqua;
+    padding-left: 10%;
+}
+.login-remember-check {
+    height: 80%;
 }
