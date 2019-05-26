@@ -29,6 +29,8 @@ Route::get('projects/{project_id}', 'ProjectsController@show');
 //    echo "test " . $id;
 //});
 Route::get('projects/create', 'ProjectsController@create');
+Route::get('projects/edit/{project_id}', 'ProjectsController@edit');
+Route::get('projects/destroy', 'ProjectsController@destroy');
 Route::get('projects', 'ProjectsController@index');
 Route::post('projects', 'ProjectsController@store');
 

@@ -1,4 +1,4 @@
-@extends('layouts.myapp')
+@extends('layouts.app')
 
 @section('content')
     <h1>{{$title}} page</h1>

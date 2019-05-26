@@ -27,6 +27,7 @@ class CreateProjectsTable extends Migration
             $table->string('image_url');
             $table->string('company_logo');
             $table->string('sponsor_img');
+            $table->timestamps();
         });
     }
 
