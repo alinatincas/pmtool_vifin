@@ -22,12 +22,15 @@
 <body>
     <div id="app">
         @include('inc.navbar')
+        @include('inc.sidebar')
         
-        <div class="container">
+        <main class="container">
             @include('inc.messages')
             @yield('content')
-        </div>
-            
+        </main>
+        <footer class="footer-vifin">
+            <p class="footer-vifin-p">COPYRIGHT &copy; VIFIN</p>
+        </footer>    
     </div>
 
     <!-- Scripts -->

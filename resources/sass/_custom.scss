@@ -4,8 +4,33 @@ body {
     color: $vifin-dark-grey;
 }
 
-.logo-img {
-    width: 15%;
+//Footer
+.footer-vifin {
+    text-align: center;
+}
+.footer-vifin-p {
+    padding: 1%;
 }
 
-
+//Header
+.nav-vifin,
+.footer-vifin {
+    background-color: $vifin-light-grey !important;
+}
+.logo-img {
+    width: 20%;
+}
+.btn-vifin {
+    box-shadow: $box-shadow;
+    border: none;
+    background-color: $vifin-aqua !important;
+    color: $white;
+}
+.btn-vifin-a {
+    text-decoration: none;
+    color: $white;
+}
+.btn-vifin-a:hover {
+    text-decoration: none;
+    color: $white;
+}
