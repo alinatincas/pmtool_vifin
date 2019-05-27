@@ -10,7 +10,7 @@ class PagesController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
 
@@ -23,5 +23,10 @@ class PagesController extends Controller
         //return view('pages.timesheet');
         //return view('pages.timesheet', compact('title'));
         return view('pages.timesheet')->with('title', $title);
+    }
+    public function profile()
+    {
+
+        return view('pages.profile');
     }
 }

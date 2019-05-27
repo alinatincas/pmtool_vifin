@@ -15,21 +15,28 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="main">
         @include('inc.navbar')
-        @include('inc.sidebar')
-        
-        <main class="container">
-            @include('inc.messages')
-            @yield('content')
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-2 sidebar-vifin">
+                    @include('inc.sidebar')
+                </div>
+                <div class="col-10">
+                    @include('inc.messages')
+                    @yield('content')
+                </div>
+            </div>
+            
         </main>
         <footer class="footer-vifin">
-            <p class="footer-vifin-p">COPYRIGHT &copy; VIFIN</p>
+           <b> <p class="footer-vifin-p">COPYRIGHT &copy; VIFIN</p></b>
         </footer>    
     </div>
 

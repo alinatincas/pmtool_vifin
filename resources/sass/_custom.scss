@@ -5,17 +5,27 @@ body {
 }
 
 //Footer
+.header-vifin {
+    box-shadow: $shadow-bottom;
+}
 .footer-vifin {
     text-align: center;
+    box-shadow: $shadow-top;
 }
 .footer-vifin-p {
     padding: 1%;
+    margin-bottom: 0rem;
+}
+.sidebar-vifin {
+    box-shadow: $shadow-right;
 }
 
 //Header
 .nav-vifin,
-.footer-vifin {
+.footer-vifin,
+.sidebar-vifin {
     background-color: $vifin-light-grey !important;
+    border: 2px solid #ccc;
 }
 .logo-img {
     width: 20%;
@@ -33,4 +43,35 @@ body {
 .btn-vifin-a:hover {
     text-decoration: none;
     color: $white;
+}
+
+//Sidebar
+.active {
+    a {
+        color: $vifin-aqua !important;
+        font-weight: bold;
+    }
+}
+
+.aside-vifin {
+    i {
+        font-size: 2rem;
+    }
+    .row {
+        align-items: baseline;
+        padding-top: 17%;
+        padding-bottom: 17%;
+        padding-left: 10%;
+        box-shadow: $shadow-bottom;
+        border: 2px solid #ccc;
+    }
+
+    a {
+        color: $vifin-dark-grey;
+    }
+    a:hover {
+        text-decoration: none;
+        color: $vifin-aqua;
+        font-weight: bold;
+    }
 }
