@@ -1,4 +1,67 @@
-@extends('layouts.app')
+@extends('layouts.login_layout')
+
+@section('content')
+<div class="content-login">
+    <div class="form-group row mb-2">
+        <div class="col-md-12">
+            <img src="/img/vifin_logo.png" alt="" class="logo-img-login mx-auto d-block img-fluid">
+        </div>
+    </div>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+              <input id="name" type="text" class="form-control @error('name') is-invalid @enderror login-form" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="name">
+
+              @error('name')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-form" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="email">
+
+              @error('email')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+        </div>
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror login-form" name="password" required autocomplete="new-password" placeholder="password">
+
+              @error('password')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+        </div>
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+              <input id="password-confirm" type="password" class="form-control login-form" name="password_confirmation" required autocomplete="new-password" placeholder="repeat password">
+            </div>
+        </div>
+        <div class="form-group row mb-4">
+            <div class="col-md-4 offset-md-4">
+              <button type="submit" class="btn btn-primary login-submit login-form">
+                  {{ __('SUBMIT') }}
+              </button>
+            </div>
+        </div>
+    </form>
+</div>
+@endsection
+
+
+
+{{--  @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -75,3 +138,4 @@
     </div>
 </div>
 @endsection
+  --}}
