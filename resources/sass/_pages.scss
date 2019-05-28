@@ -14,3 +14,34 @@
         align-items: baseline;
     }
 }
+
+//HOME
+.card-col-vifin {
+    border: none;
+}
+.card-vifin {
+    background-color: $vifin-light-grey;
+    box-shadow: $box-shadow;
+    text-align: center;
+    padding: 10%;
+    p {
+        font-size: 1.5rem;
+        line-height: normal;
+    }
+    a {
+        i {
+            color: $vifin-aqua;
+        }
+        p {
+            color: $vifin-dark-grey;
+        }
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+.card-icon-vifin {
+    font-size: 4rem;
+}
+
+//TIMESHEET-HOME

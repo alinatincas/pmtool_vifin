@@ -29,8 +29,18 @@ class ProjectsController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function index()
+    {
+        return view('projects.index');
+    }
+    public function starred()
+    {
+        return view('projects.starred');
+    }
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function all()
     {
         //$projects = Project::orderBy('project_name', 'desc')->get();
 
@@ -39,15 +49,16 @@ class ProjectsController extends Controller
 
         //$projects = Project::orderBy('project_name', 'desc')->take(1)->get();
 
-        $projects = Project::paginate(10);
-
+        //$projects = Project::paginate(10);
+        //return $projects;
         //limit with 1 post per page
 
-        //$projects =  Project::all();
-
+        $projects =  Project::all();
+        //return count($projects);
+        //return $projects;
         //$projects = DB::select('SELECT * FROM projects');
 
-        return view('projects.index')->with('projects', $projects);
+        return view('projects.all')->with('projects', $projects);
     }
 
     /**
@@ -101,7 +112,7 @@ class ProjectsController extends Controller
         $project->company_logo = $fileNameToStore;
         $project->save();
 
-        return redirect('/projects')->with('success', 'Project Created');
+        return redirect('/projects/all')->with('success', 'Project Created');
     }
 
     /**
@@ -140,8 +151,10 @@ class ProjectsController extends Controller
      * @param  int  $project_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $project_id)
+    public function update(Request $request)
     {
+        $project_id = $request->project_id;
+
         $this->validate($request, [
             'project_name' => 'required',
             'description' => 'required'
@@ -172,7 +185,7 @@ class ProjectsController extends Controller
         if ($request->hasFile('company_logo')) {
             Project::where('project_id', $project_id)->update(['company_logo' => $fileNameToStore]);
         }
-        return redirect('/projects')->with('success', 'Project Updated');
+        return redirect('/projects/all')->with('success', 'Project Updated');
     }
 
     /**
@@ -185,7 +198,7 @@ class ProjectsController extends Controller
     {
         $project = Project::where('project_id', $request->project_id)->get();
         if ($project == null) {
-            return redirect('/projects')->with('error', 'Project not found');
+            return redirect('/projects/all')->with('error', 'Project not found');
         }
         if ($project[0]->company_logo != '') {
             //delete image
@@ -193,6 +206,6 @@ class ProjectsController extends Controller
         }
         Project::where('project_id', $request->project_id)->delete();
 
-        return redirect('/projects')->with('success', 'Project Removed');
+        return redirect('/projects/all')->with('success', 'Project Removed');
     }
 }

@@ -15,25 +15,37 @@
         </div>
     </div>
 </div>   
-    @if(count($projects) > 0)
-        @foreach ($projects as $project)
-            <div class="card p-3">
-                <div class="row">
-                    <div class="col-md-4 cold-sm-4">
-                        <img src="/storage/company_logos/{{$project->company_logo}}" alt="" style="width:100%">
-                    </div>
-                    <div class="col-md-8 cold-sm-8">
-                        <h3><a href="/projects/{{$project->project_id}}">{{$project->project_name}}</a></h3>
-                    </div>
-                </div>
-            </div> <br>
-        @endforeach  
-{{--          this creates the pagination links for projects
-  --}}        {{$projects->links()}}  
-
-    @else 
-        <p>No projects found</p>
-    @endif
-
-    <button><a href="projects/create">Create</a></button>
+<div class="row pl-3">
+    <div class="col-12 pb-2">
+        <h5>See all projects, favourite them {{ 'and' }} see them in your projects{{ '.' }}</h5>
+    </div>
+    <div class="card col-3 p-3 card-col-vifin">
+        <div class="card-body card-vifin">
+            <a href="/projects/all">
+                <i class="fas fa-edit card-icon-vifin pb-3 pt-3"></i>
+                <p>ALL<br>
+                    PROJECTS</p>
+            </a>
+        </div>
+    </div>
+    <div class="card col-3 col-xs-6 p-3 card-col-vifin">
+        <div class="card-body card-vifin">
+            <a href="/projects/starred">
+                <i class="fas fa-check-square card-icon-vifin pb-3 pt-3"></i>
+                <p>MY<br>
+                    PROJECTS</p>
+            </a>
+        </div>
+    </div>
+    <div class="card col-3 col-xs-6 p-3 card-col-vifin">
+        <div class="card-body card-vifin">
+            <a href="/projects/create">
+                <i class="fas fa-check-square card-icon-vifin pb-3 pt-3"></i>
+                <p>CREATE<br>
+                    PROJECT</p>
+            </a>
+        </div>
+    </div>
+</div>
 @endsection
+

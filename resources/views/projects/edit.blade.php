@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Edit project</h1>
-    {!! Form::open(['action' => ['ProjectsController@update', $project[0]->project_id, 'method' => 'POST','enctype' => 'multipart/form-data']]) !!}
+    {!! Form::open(['action' => ['ProjectsController@update', 'project_id' => $project[0]->project_id, 'method' => 'POST','enctype' => 'multipart/form-data']]) !!}
         {{ csrf_field() }}
         <div class="form-group">
             {{Form::label('project_name', 'Project Name')}}

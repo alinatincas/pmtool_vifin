@@ -10796,3 +10796,35 @@ body {
   align-items: baseline;
 }
 
+.card-col-vifin {
+  border: none;
+}
+
+.card-vifin {
+  background-color: #f5f5f5;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.16);
+  text-align: center;
+  padding: 10%;
+}
+
+.card-vifin p {
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.card-vifin a i {
+  color: #1d9db5;
+}
+
+.card-vifin a p {
+  color: #7c8387;
+}
+
+.card-vifin a:hover {
+  text-decoration: none;
+}
+
+.card-icon-vifin {
+  font-size: 4rem;
+}
+

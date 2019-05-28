@@ -17,16 +17,16 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function timesheet()
+    /* public function timesheet()
     {
 
 
         return view('pages.timesheet');
         //return view('pages.timesheet', compact('title'));
 
-        /* $title = 'TIMESHEET';
-        return view('pages.timesheet')->with('title', $title); */
-    }
+         $title = 'TIMESHEET';
+        return view('pages.timesheet')->with('title', $title); 
+    } */
     public function profile()
     {
 

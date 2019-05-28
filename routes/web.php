@@ -16,24 +16,33 @@
 }); */
 
 Route::get('/', 'PagesController@index');
-Route::get('/timesheet', 'PagesController@timesheet');
+
+Route::get('/timesheet', 'TimesheetController@index');
+Route::get('/timesheet/daily', 'TimesheetController@daily');
+Route::get('/timesheet/overview', 'TimesheetController@overview');
+
 Route::get('/profile', 'PagesController@profile');
 
 Route::resource('workpackages', 'WorkPackagesController');
 
-Route::resource('projects', 'ProjectsController');
+//Route::resource('projects', 'ProjectsController');
 
 
 //Route::resource('/', 'ProjectsController');
-Route::get('projects/{project_id}', 'ProjectsController@show');
+
 //Route::get('project/{project_id}', function ($id) {
 //    echo "test " . $id;
 //});
 Route::get('projects/create', 'ProjectsController@create');
 Route::get('projects/edit/{project_id}', 'ProjectsController@edit');
-Route::get('projects/destroy', 'ProjectsController@destroy');
+Route::delete('projects/destroy', 'ProjectsController@destroy');
+Route::put('projects/update', 'ProjectsController@update');
 Route::get('projects', 'ProjectsController@index');
+Route::get('projects/all', 'ProjectsController@all');
+Route::get('projects/starred', 'ProjectsController@starred');
+Route::get('projects/{project_id}', 'ProjectsController@show');
 Route::post('projects', 'ProjectsController@store');
+
 
 Auth::routes();
 
