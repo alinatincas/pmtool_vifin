@@ -16,7 +16,7 @@
                     </li>
                 @endif
             @else                                           
-                <div class="">{{ Auth::user()->name }}                      
+                <div class="">{{ Auth::user()->fname }}  {{ Auth::user()->lname }}                                          
                     <button type="button" class="btn btn-vifin">
                         <a class="btn-vifin-a" href="{{ route('logout') }}"
                         onclick="event.preventDefault();

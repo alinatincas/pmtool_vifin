@@ -22,7 +22,7 @@
     <div class="card col-3 p-3 card-col-vifin">
         <div class="card-body card-vifin">
             <a href="/projects/all">
-                <i class="fas fa-edit card-icon-vifin pb-3 pt-3"></i>
+                <i class="fas fa-layer-group card-icon-vifin pb-3 pt-3"></i>
                 <p>ALL<br>
                     PROJECTS</p>
             </a>
@@ -31,7 +31,7 @@
     <div class="card col-3 col-xs-6 p-3 card-col-vifin">
         <div class="card-body card-vifin">
             <a href="/projects/starred">
-                <i class="fas fa-check-square card-icon-vifin pb-3 pt-3"></i>
+                <i class="fas fa-star card-icon-vifin pb-3 pt-3"></i>
                 <p>MY<br>
                     PROJECTS</p>
             </a>
@@ -40,7 +40,7 @@
     <div class="card col-3 col-xs-6 p-3 card-col-vifin">
         <div class="card-body card-vifin">
             <a href="/projects/create">
-                <i class="fas fa-check-square card-icon-vifin pb-3 pt-3"></i>
+                <i class="fas fa-plus-square card-icon-vifin pb-3 pt-3"></i>
                 <p>CREATE<br>
                     PROJECT</p>
             </a>

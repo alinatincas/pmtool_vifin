@@ -19,6 +19,9 @@ class CreateProjectsTable extends Migration
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->text('description');
+            $table->string('contact_name', 100);
+            $table->string('contact_phone', 100);
+            $table->string('contact_email');
             $table->string('grant_agree', 100);
             $table->string('coord_partner', 100);
             $table->string('org_name', 100);

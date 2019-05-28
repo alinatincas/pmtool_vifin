@@ -16,7 +16,7 @@
     </div>
     <div class="row pl-3">
         <div class="col-12 pb-3">
-            <h5>Welcome, {{ Auth::user()->name }}! <br>
+            <h5>Welcome, {{ Auth::user()->fname }}  {{ Auth::user()->lname }} ! <br>
             Have a productive day {{ 'as' }} usual {{ 'and' }} don{{ '"'}}t forget to fill in the <b>timesheet</b>!</h5>
         </div>
         <div class="card col-3 p-3 card-col-vifin">

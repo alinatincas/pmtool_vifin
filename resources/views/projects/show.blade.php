@@ -8,6 +8,11 @@
         <div class="col-md-8 cold-sm-8">
             <h1>{{$project[0]->project_name}}</h1>   
             <h3>{!!$project[0]->description!!}</h3>
+            <h3>{!!$project[0]->start_date!!}</h3>
+            <h3>{!!$project[0]->end_date!!}</h3>
+            <h3>{!!$project[0]->contact_name!!}</h3>
+            <h3>{!!$project[0]->contact_phone!!}</h3>
+            <h3>{!!$project[0]->contact_email!!}</h3>
         </div>
     </div>
     

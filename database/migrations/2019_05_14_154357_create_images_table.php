@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('img_id');
-            $table->string('img_url', 100);
+            $table->string('img_url');
         });
     }
 

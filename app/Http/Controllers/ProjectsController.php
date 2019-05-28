@@ -82,7 +82,7 @@ class ProjectsController extends Controller
         $this->validate($request, [
             'project_name' => 'required',
             'description' => 'required',
-            'company_logo' => 'image|nullable|max:1999'
+            'company_logo' => 'image|nullable|max:1999',
         ]);
 
         //Handle file upload
@@ -109,6 +109,11 @@ class ProjectsController extends Controller
         $project = new Project;
         $project->project_name = $request->input('project_name');
         $project->description = $request->input('description');
+        $project->start_date = $request->input('start_date');
+        $project->end_date = $request->input('end_date');
+        $project->contact_name = $request->input('contact_name');
+        $project->contact_phone = $request->input('contact_phone');
+        $project->contact_email = $request->input('contact_email');
         $project->company_logo = $fileNameToStore;
         $project->save();
 
@@ -157,7 +162,11 @@ class ProjectsController extends Controller
 
         $this->validate($request, [
             'project_name' => 'required',
-            'description' => 'required'
+            /* 'start_date' => 'required',
+            'end_date' => 'required',
+            'contact_name' => 'required',
+            'contact_phone' => 'required',
+            'contact_email' => 'required', */
         ]);
 
         //Handle file upload
@@ -181,6 +190,11 @@ class ProjectsController extends Controller
         //Create Project
         Project::where('project_id', $project_id)->update(['project_name' => $request->input('project_name')]);
         Project::where('project_id', $project_id)->update(['description' => $request->input('description')]);
+        Project::where('project_id', $project_id)->update(['start_date' => $request->input('start_date')]);
+        Project::where('project_id', $project_id)->update(['end_date' => $request->input('end_date')]);
+        Project::where('project_id', $project_id)->update(['contact_name' => $request->input('contact_name')]);
+        Project::where('project_id', $project_id)->update(['contact_phone' => $request->input('contact_phone')]);
+        Project::where('project_id', $project_id)->update(['contact_email' => $request->input('contact_email')]);
 
         if ($request->hasFile('company_logo')) {
             Project::where('project_id', $project_id)->update(['company_logo' => $fileNameToStore]);

@@ -15,5 +15,17 @@
         </div>
     </div>
 </div> 
+<div class="row">
+    {{ Auth::user()->fname }} <br>
+    {{ Auth::user()->lname }} <br>
+    {{ Auth::user()->email }} <br>
+    
+</div>
+{{--  <div>
+    {{ Auth::user()->pay}} <br>
+    {{ Auth::user()->phone_no }} <br>
+    {{ Auth::user()->dep_name }} <br>
+    {{ Auth::user()->pos_name }} <br>
+</div>  --}}
 @endsection
 
