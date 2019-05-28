@@ -81,6 +81,11 @@ class ProjectsController extends Controller
     {
         $this->validate($request, [
             'project_name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'contact_name' => 'required',
+            'contact_phone' => 'required',
+            'contact_email' => 'required',
             'description' => 'required',
             'company_logo' => 'image|nullable|max:1999',
         ]);
@@ -162,11 +167,13 @@ class ProjectsController extends Controller
 
         $this->validate($request, [
             'project_name' => 'required',
-            /* 'start_date' => 'required',
+            'start_date' => 'required',
             'end_date' => 'required',
             'contact_name' => 'required',
             'contact_phone' => 'required',
-            'contact_email' => 'required', */
+            'contact_email' => 'required',
+            'description' => 'required',
+            'company_logo' => 'image|nullable|max:1999',
         ]);
 
         //Handle file upload

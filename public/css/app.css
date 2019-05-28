@@ -10777,7 +10777,7 @@ body {
 .profile-vifin .top-head-text-col,
 .employees-vifin .top-head-text-col,
 .projects-vifin .top-head-text-col {
-  margin-right: -4%;
+  margin-right: -5%;
 }
 
 .home-vifin .icon-home-vifin-head,
@@ -10826,5 +10826,9 @@ body {
 
 .card-icon-vifin {
   font-size: 4rem;
+}
+
+.projects-vifin .login-form {
+  text-align: left;
 }
 
