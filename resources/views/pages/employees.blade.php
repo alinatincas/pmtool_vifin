@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="employees-vifin">
+    <div class="row top-head-vifin-col p-3 {{ Request::segment(1) === 'employees' ? 'active' : null  }}">
+        <div class="col-1 top-head-text-col">
+            <a href="/employees">
+                <i class="fas fa-users icon-home-vifin-head"></i>
+            </a>
+        </div>
+        <div class="col-11">
+            <a href="/employees">
+                <h4>EMPLOYEES</h>
+            </a>
+        </div>
+    </div>
+</div> 
     <section class="content">
         @if(session('message'))
             <div class="alert alert-success" role="alert">

@@ -10772,3 +10772,27 @@ body {
   height: 80%;
 }
 
+.home-vifin .top-head-text-col,
+.timesheet-vifin .top-head-text-col,
+.profile-vifin .top-head-text-col,
+.employees-vifin .top-head-text-col,
+.projects-vifin .top-head-text-col {
+  margin-right: -4%;
+}
+
+.home-vifin .icon-home-vifin-head,
+.timesheet-vifin .icon-home-vifin-head,
+.profile-vifin .icon-home-vifin-head,
+.employees-vifin .icon-home-vifin-head,
+.projects-vifin .icon-home-vifin-head {
+  font-size: 2rem;
+}
+
+.home-vifin .top-head-vifin-col,
+.timesheet-vifin .top-head-vifin-col,
+.profile-vifin .top-head-vifin-col,
+.employees-vifin .top-head-vifin-col,
+.projects-vifin .top-head-vifin-col {
+  align-items: baseline;
+}
+

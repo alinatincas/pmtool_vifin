@@ -19,10 +19,13 @@ class PagesController extends Controller
 
     public function timesheet()
     {
-        $title = 'TIMESHEET';
-        //return view('pages.timesheet');
+
+
+        return view('pages.timesheet');
         //return view('pages.timesheet', compact('title'));
-        return view('pages.timesheet')->with('title', $title);
+
+        /* $title = 'TIMESHEET';
+        return view('pages.timesheet')->with('title', $title); */
     }
     public function profile()
     {

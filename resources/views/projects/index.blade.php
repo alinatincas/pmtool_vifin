@@ -1,7 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Projects</h1>
+<div class="projects-vifin">
+    <div class="row top-head-vifin-col p-3 {{ Request::segment(1) === 'projects' ? 'active' : null  }}">
+        <div class="col-1 top-head-text-col">
+            <a href="/projects">
+                <i class="fas fa-layer-group icon-home-vifin-head"></i>
+            </a>
+        </div>
+        <div class="col-11">
+            <a href="/projects">
+                <h4>PROJECTS</h4>
+            </a>
+        </div>
+    </div>
+</div>   
     @if(count($projects) > 0)
         @foreach ($projects as $project)
             <div class="card p-3">

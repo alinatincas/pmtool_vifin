@@ -7,7 +7,7 @@
         </div>
         <div class="col-9">
             <a href="/">
-                <h5>HOME</h5>
+                <h5>HOME PAGE</h5>
             </a>
         </div>
     </div>
