@@ -53,8 +53,11 @@ class RegisterController extends Controller
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            /* 'user_img' => ['image|nullable|max:1999'], */
+            'pay' => ['required', 'integer'],
+            'dep_name' => ['required', 'string'],
+            'pos_name' => ['required', 'string'],
+            'phone_no' => ['required', 'string'],
+            //'user_img' => ['image|required|mimes:jpg,jpeg'],
         ]);
     }
 
@@ -66,17 +69,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        /*  $user_img = time() . '.' . $data['user_img']->getClientOriginalExtension();
+        $data['user_img']->move(base_path() . '/public/upload/', $user_img); */
         return User::create([
             //'name' => $data['name'],
             'fname' => $data['fname'],
             'lname' => $data['lname'],
             'email' => $data['email'],
-            /* 'phone_no' => $data['phone_no'],
             'pay' => $data['pay'],
-            'active' => $data['active'],
-            'user_img' => $data['user_img'],
             'dep_name' => $data['dep_name'],
             'pos_name' => $data['pos_name'],
+            'phone_no' => $data['phone_no'],
+            //'user_img' => $data['user_img'],
+
+            /* 
+            
+            'active' => $data['active'],
+            
             'usertype' => Config::get('constants.ROLE_USER'), */
             'password' => Hash::make($data['password']),
 

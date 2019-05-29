@@ -15,6 +15,7 @@ class CreateWorkPakagesTable extends Migration
     {
         Schema::create('work_pakages', function (Blueprint $table) {
             $table->bigIncrements('wp_id');
+            $table->string('wp_name');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->integer('total_work');

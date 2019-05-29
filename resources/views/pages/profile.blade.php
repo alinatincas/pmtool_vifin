@@ -19,13 +19,24 @@
     {{ Auth::user()->fname }} <br>
     {{ Auth::user()->lname }} <br>
     {{ Auth::user()->email }} <br>
-    
-</div>
-{{--  <div>
     {{ Auth::user()->pay}} <br>
     {{ Auth::user()->phone_no }} <br>
     {{ Auth::user()->dep_name }} <br>
     {{ Auth::user()->pos_name }} <br>
+    
+</div>
+{{-- <div class="row">
+    <h1>File Upload</h1>
+    <form action="{{('upload') }}" method="post" enctype="multipart/form-data">
+        <label>Select image to upload:</label>
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Submit" name="submit">
+        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    </form>
+</div> --}}
+{{--  <div>
+    
+    
 </div>  --}}
 @endsection
 

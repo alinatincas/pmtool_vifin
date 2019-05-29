@@ -20,7 +20,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('pages/employees', compact('employees'));
+        return view('/employees', compact('employees'));
     }
 
     /**
@@ -52,7 +52,8 @@ class EmployeeController extends Controller
             $employee = new Employee;
             $employee->fill($request->except('actionType'));
             $employee->save();
-            return response()->json(['success' => true, 'result' => 'Employee Created Successfully', 'employee' => $employee]);
+            $request->session()->flash('message', 'Employee Created Successfully');
+            return response()->json(['success' => true, 'result' => 'Emplyee Created Successfully', 'employee' => $employee]);
         } else {
             return $this->update($request, Employee::findOrFail($request['id']));
         }
@@ -96,11 +97,10 @@ class EmployeeController extends Controller
             'doj' => 'required|date_format:Y-m-d'
         ]);
 
-        $employee = new Employee;
         $employee->fill($request->except('actionType'));
         $employee->save();
-        $request->session()->flash('message', 'Employee Created Successfully');
-        return response()->json(['success' => true, 'result' => 'Employee Updated Successfully', 'employee' => $employee]);
+        $request->session()->flash('message', 'Employee Updated Successfully');
+        return response()->json(['success' => true, 'result' => 'Emplyee Updated Successfully', 'employee' => $employee]);
     }
 
     /**

@@ -17,9 +17,18 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/timesheet', 'TimesheetController@index');
+
+
+Route::get('timesheet/create', 'TimesheetController@create');
+Route::get('timesheet/edit/{ts_id}', 'TimesheetController@edit');
+Route::delete('timesheet/destroy', 'TimesheetController@destroy');
+Route::put('timesheet/update', 'TimesheetController@update');
+Route::get('timesheet', 'TimesheetController@index');
+Route::get('timesheet/overview', 'TimesheetController@overview');
+Route::get('timesheet/{ts_id}', 'TimesheetController@show');
 Route::get('/timesheet/daily', 'TimesheetController@daily');
-Route::get('/timesheet/overview', 'TimesheetController@overview');
+
+Route::post('timesheet', 'ProjectsController@store');
 
 Route::get('/profile', 'PagesController@profile');
 
@@ -47,8 +56,10 @@ Route::post('projects', 'ProjectsController@store');
 Auth::routes();
 
 Route::get('/dashboard', 'DasboardController@index');
-Route::get('/employees', 'EmployeeController@index');
+//Route::get('/employees', 'EmployeeController@index');
 
 Route::resources([
     'employees' => 'EmployeeController',
 ]);
+
+Route::post('upload', 'UploadController@upload');
