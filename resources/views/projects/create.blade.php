@@ -52,9 +52,18 @@
                     {{Form::label('description', 'Project Description')}} <br>
                     {{Form::textarea('description', '', ['id' => 'text_editor', 'class' => 'form-control login-form', 'placeholder' => 'Project Description'])}}
                 </div>     
-                {{Form::submit('SUBMIT', ['class' => 'btn btn-primary btn-vifin'])}}         
-            </div>           
-        {!! Form::close() !!} <br>
+            </div>
+        <div class="row p-3">
+            <div class="col-6">
+                <button type="button" class="btn btn-vifin">
+                    <a href="javascript:history.back()" class="btn-vifin-a">BACK</a>
+                </button>   
+            </div>
+            <div class="col-6 vifin-align-right">
+                {{Form::submit('SUBMIT', ['class' => 'btn btn-primary btn-vifin'])}}
+            </div>       
+            {!! Form::close() !!} <br>    
+        </div>   
     </div>
 </div>    
 

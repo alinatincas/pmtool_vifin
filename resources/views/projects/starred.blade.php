@@ -14,15 +14,16 @@
             </a>
         </div>
     </div>
+    <div class="row pl-3">
+        <div class="col-12 pb-2">
+            <h5>No projects found!</h5>
+        </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-vifin">
+                <a href="javascript:history.back()" class="btn-vifin-a">BACK</a>
+            </button>
+        </div>
+    </div> 
 </div>   
-    {{--  @if
-        @foreach 
-
-        @endforeach  
-
-    @else   --}}
-        <p>No projects found</p>
-    {{--  @endif  --}}
-
 @endsection
 

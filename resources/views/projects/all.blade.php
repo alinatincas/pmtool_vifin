@@ -16,26 +16,26 @@
     </div>
 </div>   
     @if(count($projects) > 0)
-        @foreach ($projects as $project)
-            <div class="card p-3">
-                <div class="row">
-                    <div class="col-md-4 cold-sm-4">
-                        <img src="/storage/company_images/{{$project->company_logo}}" alt="" style="width:100%">
-
-                    </div>
-                    <div class="col-md-8 cold-sm-8">
-                        <h3><a href="/projects/{{$project->project_id}}">{{$project->project_name}}</a></h3>
-                    </div>
-                </div>
-            </div> <br>
-        @endforeach  
-    {{--this creates the pagination links for projects--}}    
-    {{--$projects->links()--}}  
-
-    @else 
-        <p>No projects found</p>
-    @endif
-
-    <button><a href="/projects/create">Create</a></button>
+    @foreach ($projects as $project)
+    <div class="row pl-3">
+        <div class="card col-3 p-3 card-col-vifin">           
+            <div class="card-body card-vifin align-middle">
+                <a href="/projects/{{$project->project_id}}">
+                    <img src="/storage/company_images/{{$project->company_logo}}" alt="" style="width:100%"></a>
+               <a href="/projects/{{$project->project_id}}"> <p class="list-vifin-p">{{$project->project_name}}</p></a>
+            </div>            
+        </div>
+        @endforeach 
+        @else 
+            <div class="col-12 pb-2">
+                <h5>No projects found</h5>
+            </div>
+        @endif       
+    </div>
+    <div class="col-12 pb-2">
+        <button type="button" class="btn btn-vifin">
+            <a href="javascript:history.back()" class="btn-vifin-a">BACK</a>
+        </button>
+    </div>
 @endsection
 

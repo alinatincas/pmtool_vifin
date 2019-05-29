@@ -10824,11 +10824,49 @@ body {
   text-decoration: none;
 }
 
+.card-vifin .list-vifin-p {
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #7c8387;
+}
+
 .card-icon-vifin {
   font-size: 4rem;
 }
 
 .projects-vifin .login-form {
   text-align: left;
+}
+
+.projects-vifin .vifin-align-right {
+  text-align: right;
+}
+
+.projects-vifin i,
+.projects-vifin .icon-vifin-project {
+  text-align: left;
+}
+
+.card-vifin-indiv-project {
+  padding: 5% !important;
+  text-align: left;
+}
+
+.vifin-icon-p i {
+  display: inline-flex;
+  color: #1d9db5;
+}
+
+.vifin-icon-p i p {
+  color: #7c8387;
+  margin-top: -5%;
+}
+
+.text-color-aqua {
+  color: #1d9db5;
+}
+
+.vifin-align-end {
+  align-self: flex-end;
 }
 
