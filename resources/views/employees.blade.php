@@ -85,7 +85,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="employeeForm" role="form">
+                    {{--  <form id="employeeForm" role="form">
                         <div class="modal-body">
                             {{ csrf_field() }}
                             <input type="hidden" class="form-control" id="actionType" name="actionType">
@@ -119,7 +119,7 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-primary" id="submitForm">Save</button>
                         </div>
-                    </form>    
+                    </form>      --}}
                 </div>    
             </div>
         </div>

@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['action' => ['ProjectsController@update', 'method' => 'PUT', 'project_id' => $project[0]->project_id,'enctype' => 'multipart/form-data']]) !!}
+        {!! Form::open(['action' => ['ProjectsController@update', 'project_id' => $project[0]->project_id, 'method' => 'POST','enctype' => 'multipart/form-data']]) !!}
         {{ csrf_field() }}
         <div class="row pl-3">
             <div class="col-5">

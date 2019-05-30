@@ -26,9 +26,8 @@ Route::put('timesheet/update', 'TimesheetController@update');
 Route::get('timesheet', 'TimesheetController@index');
 Route::get('timesheet/overview', 'TimesheetController@overview');
 Route::get('timesheet/{ts_id}', 'TimesheetController@show');
-Route::get('/timesheet/daily', 'TimesheetController@daily');
 
-Route::post('timesheet', 'ProjectsController@store');
+Route::post('timesheet', 'TimesheetController@store');
 
 Route::get('/profile', 'PagesController@profile');
 
@@ -57,7 +56,7 @@ Auth::routes();
 
 Route::get('/dashboard', 'DasboardController@index');
 //Route::get('/employees', 'EmployeeController@index');
-
+Route::POST('employees', 'EmployeeController@store');
 Route::resources([
     'employees' => 'EmployeeController',
 ]);

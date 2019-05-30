@@ -21,7 +21,7 @@
     </div>
     <div class="card col-3 p-3 card-col-vifin">
         <div class="card-body card-vifin">
-            <a href="/timesheet/daily">
+            <a href="/timesheet/create">
                 <i class="fas fa-edit card-icon-vifin pb-3 pt-3"></i>
                 <p>FILL IN <br>
                     TIME SHEET</p>

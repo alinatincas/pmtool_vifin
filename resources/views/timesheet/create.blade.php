@@ -19,9 +19,10 @@
             {{ csrf_field() }}
         <div class="row pl-3">
             <div class="col-5">
-                {{-- <div class="form-group">
-                    {{Form::select('project_name', '', ['class' => 'form-control login-form', 'placeholder' => 'Project Name'])}}
-                </div> --}}
+                <div class="form-group">
+                    {{--  {{Form::select('project_name', '', ['class' => 'form-control login-form', 'placeholder' => 'Project Name'])}}  --}}
+                    {{Form::select('project_name', $projects,'', ['class' => 'form-control'])}}
+                </div>
                 <div class="form-group">
                     {{Form::label('ts_date', 'Date')}}
                     {{Form::date('ts_date', '', ['class' => 'form-control login-form', 'placeholder' => 'Date'])}}

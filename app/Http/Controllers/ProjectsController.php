@@ -87,7 +87,7 @@ class ProjectsController extends Controller
             'contact_phone' => 'required',
             'contact_email' => 'required',
             'description' => 'required',
-            'company_logo' => 'image|nullable|max:1999',
+            //'company_logo' => 'image|nullable|max:1999',
         ]);
 
         //Handle file upload
@@ -173,9 +173,8 @@ class ProjectsController extends Controller
             'contact_phone' => 'required',
             'contact_email' => 'required',
             'description' => 'required',
-            'company_logo' => 'image|nullable|max:1999',
+            //'company_logo' => 'image|nullable|max:1999',
         ]);
-
         //Handle file upload
         if ($request->hasFile('company_logo')) {
             //Get file name with the extension
@@ -189,7 +188,6 @@ class ProjectsController extends Controller
 
             //File name to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-
             //upload image
             $path = $request->file('company_logo')->storeAs('public/company_images', $fileNameToStore);
         }

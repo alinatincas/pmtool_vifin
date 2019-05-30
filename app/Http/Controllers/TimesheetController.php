@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Timesheet;
+use App\Project;
 use DB;
 
 class TimesheetController extends Controller
@@ -17,11 +18,11 @@ class TimesheetController extends Controller
 
         return view('timesheet.index');
     }
-    public function daily()
+    /*     public function daily()
     {
 
         return view('timesheet.daily');
-    }
+    } */
     public function overview()
     {
         $timesheet =  Timesheet::all();
@@ -29,7 +30,8 @@ class TimesheetController extends Controller
     }
     public function create()
     {
-        return view('timesheet.create');
+        $projects =  Project::all()->pluck('project_name', 'project_name');
+        return view('timesheet.create')->with('projects', $projects);
     }
     /**
      * Store a newly created resource in storage.
@@ -40,7 +42,7 @@ class TimesheetController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'project_name' => 'required',
+            //'project_name' => 'required',
             'ts_date' => 'required',
             'activity' => 'required',
             'hours_spent' => 'required',
@@ -48,7 +50,7 @@ class TimesheetController extends Controller
 
         //Create Timesheet
         $timesheet = new Timesheet;
-        $timesheet->project_name = $request->input('project_name');
+        $timesheet->project_name = 'Timesheet project';
         $timesheet->ts_date = $request->input('ts_date');
         $timesheet->activity = $request->input('activity');
         $timesheet->hours_spent = $request->input('hours_spent');
