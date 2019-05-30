@@ -62,3 +62,6 @@ Route::resources([
 ]);
 
 Route::post('upload', 'UploadController@upload');
+
+Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);

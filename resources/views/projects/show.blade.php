@@ -57,8 +57,7 @@
                 </div>
                 
             </div>            
-        </div>
-      
+        </div>      
     </div>
     <div class="col-12 pb-2">
         <button type="button" class="btn btn-vifin">

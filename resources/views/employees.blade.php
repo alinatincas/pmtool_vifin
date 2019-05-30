@@ -85,9 +85,10 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    {{--  <form id="employeeForm" role="form">
+                     <form id="employeeForm" role="form"> {{-- form needs to be replaced --}}
                         <div class="modal-body">
                             {{ csrf_field() }}
+                            {{ method_field('patch') }}
                             <input type="hidden" class="form-control" id="actionType" name="actionType">
                             <div class="form-group">
                                 <label for="id">Employee Id: </label>
@@ -119,7 +120,7 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-primary" id="submitForm">Save</button>
                         </div>
-                    </form>      --}}
+                    </form>     
                 </div>    
             </div>
         </div>

@@ -14,17 +14,35 @@
             </a>
         </div>
     </div>
+    <div class="row pl-3">
+        <div class="card col-9 p-3 card-col-vifin">           
+            <div class="card-body card-vifin card-vifin-indiv-project">
+                <div class="row">
+                    <div class="col-5 vifin-icon-p">
+                        <i class="fas fa-user icon-vifin-project">Name:</i>
+                        <p>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</p>
+
+                        <i class="fas fa-phone-square icon-vifin-project">Phone number:</i>
+                        <p>{{ Auth::user()->phone_no }}</p>
+
+
+                        <i class="fas fa-envelope icon-vifin-project">Email:</i>
+                        <p>{{ Auth::user()->email }}</p>
+                    </div>              
+                    <div class="col-4">
+                        <h4 class="text-color-aqua">Hourly pay (dkk):</h4>
+                        <p>{{ Auth::user()->pay }}</p>
+                        <h4 class="text-color-aqua">Department name:</h4>
+                        <p>{{ Auth::user()->dep_name }}</p>
+                        <h4 class="text-color-aqua">Position Name:</h4>
+                        <p>{{ Auth::user()->pos_name }} </p>
+                    </div>      
+                        
+                </div>                
+            </div>            
+        </div>      
+    </div>
 </div> 
-<div class="row">
-    {{ Auth::user()->fname }} <br>
-    {{ Auth::user()->lname }} <br>
-    {{ Auth::user()->email }} <br>
-    {{ Auth::user()->pay}} <br>
-    {{ Auth::user()->phone_no }} <br>
-    {{ Auth::user()->dep_name }} <br>
-    {{ Auth::user()->pos_name }} <br>
-    
-</div>
 {{-- <div class="row">
     <h1>File Upload</h1>
     <form action="{{('upload') }}" method="post" enctype="multipart/form-data">
